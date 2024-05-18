@@ -6,7 +6,7 @@ import RingingSound from './RingingSound';
 
 function Timer() {
     const [isStarted, setIsStarted] = useState(false); // Flag for timer state
-    const [seconds, setSeconds] = useState(10); // Initial time in seconds (25 minutes)
+    const [seconds, setSeconds] = useState(25*60); // Initial time in seconds (25 minutes)
     const [counter, setCounter] = useState(0)
     const soundUrl = '/sound.mp3';
     const audio = new Audio(soundUrl);
@@ -36,12 +36,12 @@ function Timer() {
         }
         if (seconds === 0 && counter === 0 && !isStarted) {
             setCounter(1)
-            setSeconds(5)
+            setSeconds(5*60)
             setIsStarted(false)
 
         } else if (seconds === 0 && counter === 1 && !isStarted) {
             setCounter(0)
-            setSeconds(10)
+            setSeconds(25*60)
             setIsStarted(false)
 
         }
